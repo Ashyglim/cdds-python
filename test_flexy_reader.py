@@ -27,6 +27,7 @@ class VehiclePosition(Topic):
 
 def data_available(r):
     print('reader>> Listenerr Called!')
+    print(r.flexy_topic.topic)
     samples = r.take(all_samples())
     for s in samples:
         if s[1].valid_data:

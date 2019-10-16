@@ -20,6 +20,7 @@ class FlexyTopic:
         assert (self.topic > 0)
         self.data_type = DDSKeyValue
         self.dp = dp
+        self.namestr = name
 
     def gen_key(self, s):
         return self.keygen(s)

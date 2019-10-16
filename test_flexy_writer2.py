@@ -35,15 +35,13 @@ if __name__ == '__main__':
 
     # Always create a runtime to initialise DDS
     rt = Runtime()
-    dp = Participant(0)
+    dp = Participant(1)
 
-    print("Persistent id = {0}".format(Persistent().id))
-    print("Reliable id = {0}".format(Reliable().id))
-    print("KeepLastHistory id = {0}".format(KeepLastHistory(1).id))
+    # print("Persistent id = {0}".format(Persistent().id))
+    # print("Reliable id = {0}".format(Reliable().id))
+    # print("KeepLastHistory id = {0}".format(KeepLastHistory(1).id))
     # 'VehiclePosition'
     t = FlexyTopic(dp, 'KeyValue') #, None, [Reliable(),Persistent(), KeepLastHistory(1)])
-
-    print(t.topic)
 
     # p = Publisher(dp, 'cdds-python.demo')
     w = FlexyWriter(dp, t, [Reliable(), KeepLastHistory(10)])
